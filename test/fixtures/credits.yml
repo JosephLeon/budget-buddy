@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  price: 9.99
+  amount: 9.99
   interval: MyString
 
 two:
   name: MyString
-  price: 9.99
+  amount: 9.99
   interval: MyString
