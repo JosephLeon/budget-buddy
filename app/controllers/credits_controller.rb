@@ -7,7 +7,7 @@ class CreditsController < ApplicationController
 		@credit = Credit.new(credit_params)
 		 
 		@credit.save
-		redirect_to @credit
+		redirect_to "/"
 	end
 
 	private
