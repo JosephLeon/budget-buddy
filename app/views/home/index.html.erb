@@ -1,7 +1,21 @@
 <h1>Budget Buddy</h1>
 
-<p>You can manage your finances with budget buddy.</p>
 
-<p>You can input your income and expenses.</p>
 
-<%= @credits.inspect %>
+<%#= @credits.inspect %>
+<h2>Credits</h2>
+<table>
+  <tr>
+    <th>Trips</th>
+    <th>Description</th>
+    <th>Edit</th>
+    <!-- <th>Delete</th> -->
+  </tr>
+	<% @credits.each do |credit| %>
+	  <tr>
+	    <td><%= credit.name %></td>
+	    <td><%= credit.amount %></td>
+	    <td><%= link_to 'Edit', edit_credit_path(credit.id) %></td>
+	  </tr>
+	<% end %>
+</table>
