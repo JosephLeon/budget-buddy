@@ -1,21 +1,46 @@
-<h1>Budget Buddy</h1>
-
-
-
+<div class="row">
+	<div class="large-12 columns">
+		<h1>Budget Buddy</h1>
+	</div>
+</div>
 <%#= @credits.inspect %>
-<h2>Credits</h2>
-<table>
-  <tr>
-    <th>Trips</th>
-    <th>Description</th>
-    <th>Edit</th>
-    <!-- <th>Delete</th> -->
-  </tr>
-	<% @credits.each do |credit| %>
-	  <tr>
-	    <td><%= credit.name %></td>
-	    <td><%= credit.amount %></td>
-	    <td><%= link_to 'Edit', edit_credit_path(credit.id) %></td>
-	  </tr>
-	<% end %>
-</table>
+
+<div class="row">
+	<div class="large-6 medium-6 small-12 columns">
+		<h2>Credits</h2>
+		<table>
+		  <tr>
+		    <th>Name</th>
+		    <th>Amount</th>
+		    <th>Edit</th>
+		    <!-- <th>Delete</th> -->
+		  </tr>
+			<% @credits.each do |credit| %>
+			  <tr>
+			    <td><%= credit.name %></td>
+			    <td><%= credit.amount %></td>
+			    <td><%= link_to 'Edit', edit_credit_path(credit.id) %></td>
+			  </tr>
+			<% end %>
+		</table>
+	</div>
+
+	<div class="large-6 medium-6 small-12 columns">
+		<h2>Debits</h2>
+		<table>
+		  <tr>
+		    <th>Name</th>
+		    <th>Amount</th>
+		    <th>Edit</th>
+		    <!-- <th>Delete</th> -->
+		  </tr>
+			<% @debits.each do |debit| %>
+			  <tr>
+			    <td><%= debit.name %></td>
+			    <td><%= debit.amount %></td>
+			    <td><%= link_to 'Edit', edit_debit_path(debit.id) %></td>
+			  </tr>
+			<% end %>
+		</table>
+	</div>
+</div>
