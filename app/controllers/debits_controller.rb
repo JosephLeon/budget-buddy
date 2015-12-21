@@ -10,6 +10,14 @@ class DebitsController < ApplicationController
 		redirect_to "/"
 	end
 
+	def destroy
+    @debit = Debit.find(params[:id])
+    @debit.destroy
+
+    flash[:success] = "Debit deleted"
+    redirect_to "/"
+  end
+
 	private
 		def debit_params
 			params.require(:debit).permit(:name, :amount, :interal)

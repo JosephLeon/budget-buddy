@@ -1,13 +1,20 @@
-<div class="row">
+<!-- <div class="row">
 	<div class="large-12 columns">
 		<h1>Budget Buddy</h1>
 	</div>
-</div>
+</div> -->
 <%#= @credits.inspect %>
 
 <div class="row">
+	<div class="large-12 columns">
+		<h2>Balance</h2>
+		<%= calculate_budget %>
+	</div>
+</div>
+
+<div class="row">
 	<div class="large-6 medium-6 small-12 columns">
-		<h2>Credits</h2>
+		<h3>Credits</h3>
 		<table>
 		  <tr>
 		    <th>Name</th>
@@ -18,28 +25,29 @@
 			<% @credits.each do |credit| %>
 			  <tr>
 			    <td><%= credit.name %></td>
-			    <td><%= credit.amount %></td>
+			    <td><%= number_to_currency(credit.amount) %></td>
 			    <td><%= link_to 'Edit', edit_credit_path(credit.id) %></td>
-			    <td><%= link_to "Delete", credit_path(credit.id), method: :delete, data: {confirm: "Really delete this article?"} %></td>
+			    <td><%= link_to "Delete", credit_path(credit.id), method: :delete, data: {confirm: "Really delete this credit?"} %></td>
 			  </tr>
 			<% end %>
 		</table>
 	</div>
 
 	<div class="large-6 medium-6 small-12 columns">
-		<h2>Debits</h2>
+		<h3>Debits</h3>
 		<table>
 		  <tr>
 		    <th>Name</th>
 		    <th>Amount</th>
 		    <th>Edit</th>
-		    <!-- <th>Delete</th> -->
+		    <th>Delete</th>
 		  </tr>
 			<% @debits.each do |debit| %>
 			  <tr>
 			    <td><%= debit.name %></td>
-			    <td><%= debit.amount %></td>
+			    <td><%= number_to_currency(debit.amount) %></td>
 			    <td><%= link_to 'Edit', edit_debit_path(debit.id) %></td>
+			    <td><%= link_to "Delete", debit_path(debit.id), method: :delete, data: {confirm: "Really delete this debit?"} %></td>
 			  </tr>
 			<% end %>
 		</table>
