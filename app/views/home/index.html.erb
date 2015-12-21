@@ -1,7 +1,9 @@
 <div class="row">
 	<div class="large-12 columns">
 		<h2>Monthly Balance</h2>
-		<p>Current monthly balance: <%= raw calculate_budget(6666, 4000) %></p>
+		<p>Current monthly balance: <%= raw calculate_budget(@total_credits, @total_debits) %></p>
+		<!-- <p>Total Credits: <%= @total_credits %></p>
+		<p>Total Debits: <%= @total_debits %></p> -->
 	</div>
 </div>
 
