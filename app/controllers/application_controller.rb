@@ -5,7 +5,12 @@ class ApplicationController < ActionController::Base
 
   helper_method :calculate_budget
   def calculate_budget
-  	@current_budget = 'Plus $200.00'
+  	@current_budget = 200
+  	if @current_budget < 0
+  		@current_budget = '<span class="red">$200.00</span>'
+  	else
+  		@current_budget = '<span class="green">$200.00</span>'
+  	end
   end
 
 end

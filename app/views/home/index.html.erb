@@ -1,14 +1,7 @@
-<!-- <div class="row">
-	<div class="large-12 columns">
-		<h1>Budget Buddy</h1>
-	</div>
-</div> -->
-<%#= @credits.inspect %>
-
 <div class="row">
 	<div class="large-12 columns">
 		<h2>Monthly Balance</h2>
-		<%= calculate_budget %>
+		<p>Current monthly balance: <%= raw calculate_budget %></p>
 	</div>
 </div>
 
@@ -19,6 +12,7 @@
 		  <tr>
 		    <th>Name</th>
 		    <th>Amount</th>
+		    <th>Monthly Value</th>
 		    <th>Edit</th>
 		    <th>Delete</th>
 		  </tr>
@@ -26,6 +20,7 @@
 			  <tr>
 			    <td><%= credit.name %></td>
 			    <td><%= number_to_currency(credit.amount) %></td>
+			    <td><%= number_to_currency(credit.monthly_value) %></td>
 			    <td><%= link_to 'Edit', edit_credit_path(credit.id) %></td>
 			    <td><%= link_to "Delete", credit_path(credit.id), method: :delete, data: {confirm: "Really delete this credit?"} %></td>
 			  </tr>

@@ -20,6 +20,6 @@ class CreditsController < ApplicationController
 
 	private
 	  def credit_params
-	    params.require(:credit).permit(:name, :amount, :interval)
+	    params.require(:credit).permit(:name, :amount, :interval, :monthly_value)
 	  end
 end
