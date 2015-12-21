@@ -13,13 +13,14 @@
 		    <th>Name</th>
 		    <th>Amount</th>
 		    <th>Edit</th>
-		    <!-- <th>Delete</th> -->
+		    <th>Delete</th>
 		  </tr>
 			<% @credits.each do |credit| %>
 			  <tr>
 			    <td><%= credit.name %></td>
 			    <td><%= credit.amount %></td>
 			    <td><%= link_to 'Edit', edit_credit_path(credit.id) %></td>
+			    <td><%= link_to "Delete", credit_path(credit.id), method: :delete, data: {confirm: "Really delete this article?"} %></td>
 			  </tr>
 			<% end %>
 		</table>

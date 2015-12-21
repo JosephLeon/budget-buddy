@@ -2,7 +2,7 @@
 	<div class="large-12 columns">
 		<h1>Create a New Debit</h1>
 
-		<%= form_for :debit, url: {actions: "create"} do |f| %>
+		<%= form_for :debit, url: {action: "create"} do |f| %>
 			<p>
 				<%= f.label :name %>
 				<%= f.text_field :name %>
