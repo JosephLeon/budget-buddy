@@ -1,0 +1,27 @@
+<h1>Create a New Debit</h1>
+
+<%= form_for :debit, url: {actions: "create"} do |f| %>
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+	
+	<p>
+		<%= f.label :amount %>
+		<%= f.text_field :amount %>
+	</p>
+
+	<p>
+		<%= f.label :interval %>
+		<%= f.select(:interval, options_for_select([
+				['Yearly', 1], 
+				['Monthly', 2],
+				['Bi-Monthly', 3],
+				['Weekly', 4],
+				['One Time', 5]
+			])
+		) %>
+	</p>
+
+	<%= f.submit "Create Debit" %>
+<% end %>
