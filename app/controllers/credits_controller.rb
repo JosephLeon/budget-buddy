@@ -13,7 +13,11 @@ class CreditsController < ApplicationController
 		@credit = Credit.new(credit_params)
 		 
 		@credit.save
-		redirect_to "/"
+
+		respond_to do |format|
+			format.html { redirect_to "/" }
+			format.js
+		end
 	end
 
 	def destroy
