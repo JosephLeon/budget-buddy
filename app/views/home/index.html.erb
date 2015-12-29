@@ -7,10 +7,14 @@
 	</div>
 </div>
 
+<%#= render "modalcredit" %>
+
 <div class="row">
+	<!-- <div id="test">Test Div</div> -->
 	<div class="large-6 medium-6 small-12 columns">
 		<h3>Credits</h3>
-		<p><%= link_to "+ Add Credit", controller: 'credits', action: 'new' %></p>
+		<p><%= link_to "+ Add Credit", { controller: "credits", action: "new" }, id: "new-credit", remote: true %></p>
+		<!-- <p class="modal"><a href="#">+ Add Credit Ajax</a></p> -->
 		<table>
 		  <tr>
 		    <th>Name</th>

@@ -16,4 +16,14 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ 
+	$(document).foundation(); 
+
+	// $(".modal").click(function() {
+	//   $('.ajax-form').show();
+	// });
+
+	// $(".modal-close").click(function() {
+	// 	$('.ajax-form').hide();
+	// });
+});

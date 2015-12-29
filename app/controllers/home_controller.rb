@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
+
   def index
+  	@credit = Credit.new
   	@credits = Credit.all
   	@debits = Debit.all
 
