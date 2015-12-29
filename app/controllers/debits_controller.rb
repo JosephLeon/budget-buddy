@@ -7,15 +7,21 @@ class DebitsController < ApplicationController
 		@debit = Debit.new(debit_params)
 
 		@debit.save
-		redirect_to "/"
+		
+		respond_to do |format|
+			format.html { redirect_to "/" }
+			format.js
+		end
 	end
 
 	def destroy
     @debit = Debit.find(params[:id])
     @debit.destroy
 
-    flash[:success] = "Debit deleted"
-    redirect_to "/"
+    respond_to do |format|
+    	format.html { redirect_to "/" }
+    	format.js
+    end
   end
 
 	private

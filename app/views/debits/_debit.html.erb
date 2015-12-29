@@ -1,0 +1,8 @@
+<% @debit_id = "delete-" + debit.id.to_s %>
+<tr id="<%= @debit_id %>">
+  <td><%= debit.name %></td>
+  <td><%= number_to_currency(debit.amount) %></td>
+  <td><%= number_to_currency(debit.monthly_value) %></td>
+  <!-- <td><%= link_to 'Edit', edit_debit_path(debit.id) %></td> -->
+  <td><%= link_to "Delete", debit_path(debit.id), method: :delete, remote: true %></td>
+</tr>

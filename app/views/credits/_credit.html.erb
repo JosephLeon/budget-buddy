@@ -1,4 +1,5 @@
-<tr>
+<% @credit_id = "delete-" + credit.id.to_s %>
+<tr id="<%= @credit_id %>">
   <td><%= credit.name %></td>
   <td><%= number_to_currency(credit.amount) %></td>
   <td><%= number_to_currency(credit.monthly_value) %></td>

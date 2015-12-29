@@ -1,12 +1,6 @@
 class CreditsController < ApplicationController
 	def new
 		@credit = Credit.new
-
-		# respond_to do |format|
-  #     format.html # new.html.erb
-  #     format.json { render json: @credit }
-  #     format.js
-  #   end
 	end
 
 	def create
@@ -24,8 +18,10 @@ class CreditsController < ApplicationController
     @credit = Credit.find(params[:id])
     @credit.destroy
 
-    flash[:success] = "Credit deleted"
-    redirect_to "/"
+    respond_to do |format|
+    	format.html { redirect_to "/" }
+    	format.js
+    end
   end
 
   def index

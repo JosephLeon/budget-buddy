@@ -1,0 +1,30 @@
+<div class="center" id="new-debit-form">
+	<div class="ajax-form">
+		<h5>Create a New Debit</h5>
+		<%= form_for(@debit, remote: true, controller: 'debits') do |f| %>
+			<p>
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+			</p>
+			
+			<p>
+				<%= f.label :amount %>
+				<%= f.text_field :amount %>
+			</p>
+
+			<p>
+				<%= f.label :interval %>
+				<%= f.select(:interval, options_for_select([
+						['Yearly', 1], 
+						['Monthly', 2],
+						['Bi-Monthly', 3],
+						['Weekly', 4],
+						['One Time', 5]
+					])
+				) %>
+			</p>
+
+			<%= f.submit "Create Debit" %>
+		<% end %>
+	</div>
+</div>
