@@ -24,14 +24,6 @@ class CreditsController < ApplicationController
     end
   end
 
-  def index
-  	@credits = Credit.all
-
-  	if @credits
-  		render json: @credits
-  	end
-  end
-
 	private
 	  def credit_params
 	    params.require(:credit).permit(:name, :amount, :interval, :monthly_value)

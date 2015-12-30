@@ -1,31 +1,28 @@
 <div class="center" id="new-credit-form">
-	<div class="ajax-form">
-		<!-- <div class="modal-close">X</div> -->
-		<h5>Add New Credit</h5>
-		<%= form_for(@credit, remote: true, controller: 'credits') do |f| %>
-			<p>
-				<%= f.label :name %>
-				<%= f.text_field :name %>
-			</p>
-			
-			<p>
-				<%= f.label :amount %>
-				<%= f.text_field :amount %>
-			</p>
+	<h5>Add New Credit</h5>
+	<%= form_for(@credit, remote: true, controller: 'credits') do |f| %>
+		<p>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</p>
+		
+		<p>
+			<%= f.label :amount %>
+			<%= f.text_field :amount %>
+		</p>
 
-			<p>
-				<%= f.label :interval %>
-				<%= f.select(:interval, options_for_select([
-						['Yearly', 1], 
-						['Monthly', 2],
-						['Bi-Monthly', 3],
-						['Weekly', 4],
-						['One Time', 5]
-					])
-				) %>
-			</p>
+		<p>
+			<%= f.label :interval %>
+			<%= f.select(:interval, options_for_select([
+					['Yearly', 1], 
+					['Monthly', 2],
+					['Bi-Monthly', 3],
+					['Weekly', 4],
+					['One Time', 5]
+				])
+			) %>
+		</p>
 
-			<%= f.submit "Create Credit" %>
-		<% end %>
-	</div>
+		<%= f.submit "Create Credit" %>
+	<% end %>
 </div>

@@ -3,6 +3,5 @@
   <td><%= credit.name %></td>
   <td><%= number_to_currency(credit.amount) %></td>
   <td><%= number_to_currency(credit.monthly_value) %></td>
-  <!-- <td><%= link_to 'Edit', edit_credit_path(credit.id) %></td> -->
   <td><%= link_to "Delete", credit_path(credit.id), method: :delete %></td>
 </tr>
