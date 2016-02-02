@@ -1,7 +1,12 @@
 <div class="row">
 	<div class="large-12 columns">
 		<h2>Monthly Balance</h2>
-		<p>Current monthly balance: <%= raw calculate_budget(@total_credits, @total_debits) %></p>
+		
+		<!-- <span id="calculated-value"></span> -->
+		<!-- <p>Current monthly balance: <span id="balance"><%= raw calculate_budget(@total_credits, @total_debits) %></span></p> -->
+
+		<p>Current average monthly balance: <%= number_to_currency(@monthly_balance) %></p>
+		<p id="test"></p>
 	</div>
 </div>
 

@@ -26,4 +26,12 @@ $(function(){
 	// $(".modal-close").click(function() {
 	// 	$('.ajax-form').hide();
 	// });
+	
+	console.log('test');
+	var totalCredits = $('#total-credits').text();
+	console.log(totalCredits);
+	var totalDebits = $('#total-debits').text();
+	console.log(totalDebits);
+	var calculatedValue = totalCredits - totalDebits;
+	$('#calculated-value').html(calculatedValue);
 });
