@@ -12,6 +12,11 @@
 		</p>
 
 		<p>
+			<%= f.label :budget, 'Make this debit get calculated into budget plan' %>
+			<%= f.check_box :budget %>
+		</p>
+
+		<p>
 			<%= f.label :interval %>
 			<%= f.select(:interval, options_for_select([
 					['Yearly', 1], 
