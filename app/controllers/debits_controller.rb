@@ -26,6 +26,6 @@ class DebitsController < ApplicationController
 
 	private
 		def debit_params
-			params.require(:debit).permit(:name, :amount, :interval, :monthly_value)
+			params.require(:debit).permit(:name, :amount, :interval, :monthly_value, :budget)
 		end
 end
