@@ -6,6 +6,30 @@
 </div>
 
 <div class="row">
+	<div class="large-12 columns">
+		<h3>Monthly Savings</h3>
+		<p><%= link_to "+ Add Credit", { controller: "savings", action: "new" }, id: "new-saving", remote: true %></p>
+		<table id="savings">
+		  <tr>
+		    <th>Name</th>
+		    <th>Percentage</th>
+		    <th>Value</th>
+		    <th>Delete</th>
+		  </tr>
+			<%# @savings.each do |saving| %>
+				<%# @saving_id = "delete-" + saving.id.to_s %>
+			  <tr id="<%#= @saving_id %>">
+			    <td><%#= saving.name %></td>
+			    <td><%#= saving.amount %></td>
+			    <td>saving amount</td>
+			    <td><%#= link_to "Delete", credit_path(saving.id), method: :delete, remote: true %></td>
+			  </tr>
+			<%# end %>
+		</table>
+	</div>
+</div>
+
+<div class="row">
 	<div class="large-6 medium-6 small-12 columns">
 		<h3>Credits</h3>
 		<p><%= link_to "+ Add Credit", { controller: "credits", action: "new" }, id: "new-credit", remote: true %></p>

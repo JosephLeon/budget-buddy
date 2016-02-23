@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   resources :debits
   resources :credits
+  resources :savings
   root 'home#index'
 
   # Example of regular route:
