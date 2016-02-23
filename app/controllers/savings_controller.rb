@@ -15,7 +15,7 @@ class SavingsController < ApplicationController
 	end
 
 	def destroy
-    @saving = saving.find(params[:id])
+    @saving = Saving.find(params[:id])
     @saving.destroy
 
     respond_to do |format|

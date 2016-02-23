@@ -8,23 +8,23 @@
 <div class="row">
 	<div class="large-12 columns">
 		<h3>Monthly Savings</h3>
-		<p><%= link_to "+ Add Credit", { controller: "savings", action: "new" }, id: "new-saving", remote: true %></p>
+		<p><%= link_to "+ Add Saving", { controller: "savings", action: "new" }, id: "new-saving", remote: true %></p>
 		<table id="savings">
 		  <tr>
 		    <th>Name</th>
 		    <th>Percentage</th>
-		    <th>Value</th>
+		    <th>Amount</th>
 		    <th>Delete</th>
 		  </tr>
-			<%# @savings.each do |saving| %>
-				<%# @saving_id = "delete-" + saving.id.to_s %>
-			  <tr id="<%#= @saving_id %>">
-			    <td><%#= saving.name %></td>
-			    <td><%#= saving.amount %></td>
-			    <td>saving amount</td>
-			    <td><%#= link_to "Delete", credit_path(saving.id), method: :delete, remote: true %></td>
+			<% @savings.each do |saving| %>
+				<% @saving_id = "delete-" + saving.id.to_s %>
+			  <tr id="<%= @saving_id %>">
+			    <td><%= saving.name %></td>
+			    <td><%= number_to_percentage(saving.percentage, precision: 0) %></td>
+			    <td>Amount</td>
+			    <td><%= link_to "Delete", saving_path(saving.id), method: :delete, remote: true %></td>
 			  </tr>
-			<%# end %>
+			<% end %>
 		</table>
 	</div>
 </div>

@@ -1,0 +1,7 @@
+<% @saving_id = "delete-" + saving.id.to_s %>
+<tr id="<%= @saving_id %>">
+  <td><%= saving.name %></td>
+  <td><%= saving.percentage %></td>
+  <td>Amount to go here</td>
+  <td><%= link_to "Delete", saving_path(saving.id), method: :delete %></td>
+</tr>
