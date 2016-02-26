@@ -28,3 +28,18 @@
   #     console.log "test"
   #     console.log result
 		# 	$("#test").append "<div>BLA</div>"      
+
+$(document).ready ->
+
+  monthlyAmount = $('.monthly-balance')
+
+  $('')
+
+  $('.percentage').each ->
+    # console.log $(this)
+    console.log $(this).html()
+    # 50 1150
+    intPercent = parseInt($(this).html())
+    percentageAmount = (intPercent / 100) * monthlyAmount
+    # console.log percentageAmount
+    return

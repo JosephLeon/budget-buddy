@@ -2,6 +2,7 @@
 	<div class="large-12 columns">
 		<h2>Monthly Balance</h2>
 		<p>Current average monthly savings: <%= number_to_currency(@monthly_balance) %></p>
+		<p class="hidden monthly-balance"><%= @monthly_balance %></p>
 	</div>
 </div>
 
@@ -20,8 +21,8 @@
 				<% @saving_id = "delete-" + saving.id.to_s %>
 			  <tr id="<%= @saving_id %>">
 			    <td><%= saving.name %></td>
-			    <td><%= number_to_percentage(saving.percentage, precision: 0) %></td>
-			    <td>Amount</td>
+			    <td><%= number_to_percentage(saving.percentage, precision: 0) %><span class="hidden percentage"><%= saving.percentage %></span></td>
+			    <td class="calculated-amount"></td>
 			    <td><%= link_to "Delete", saving_path(saving.id), method: :delete, remote: true %></td>
 			  </tr>
 			<% end %>
