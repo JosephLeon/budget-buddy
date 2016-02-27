@@ -1,6 +1,24 @@
 class Credit < ActiveRecord::Base
 	before_save :calculate_monthly_value
 
+	after_commit :calculate_total_credits_store_in_total
+
+	def calculate_total_credits_store_in_total
+		# @total_debits = Debit.sum(:monthly_value)
+		@total_credits = Credit.sum(:monthly_value)
+		@total_debits = Debit.sum(:monthly_value)
+		@monthly_balance = @total_credits - @total_debits
+
+		if Total.exists?(1)
+			# update the value of :total
+			total = Total.find_by_id(1)
+			total.update(total: @monthly_balance)
+		else
+			# create first record for Total
+			total = Total.create(total: @monthly_balance)
+		end
+	end
+
 	def calculate_monthly_value
 		unless self.amount.blank?
 			# 1 Yearly
