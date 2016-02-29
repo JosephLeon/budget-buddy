@@ -5,6 +5,7 @@ class CreditsController < ApplicationController
 
 	def create
 		@credit = Credit.new(credit_params)
+		@total = Total.find_by_id(1)
 		 
 		@credit.save
 
